@@ -32,10 +32,12 @@ class App extends Component {
   }
   removeFromCart(index) {
     let cartCopy = this.state.cart.slice();
-    cartCopy.splice(index, 1);
+    cartCopy.splice(index,1);
+    console.log(index)
     this.setState({
       cart: cartCopy
     });
+    
   }
   navigate(location) {
     if (location === "cart") {
@@ -57,7 +59,7 @@ class App extends Component {
         <div className="main-container">
           {showCart ? (
             <ShoppingCart cart={cart}
-            removeFromCart={this.removeFromCart} />
+            removeFromCart={this.removeFromCart}/>
           ) : (
             <StoreFront products={products}
             addToCart ={this.addToCart} 
